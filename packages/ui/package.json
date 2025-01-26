@@ -6,16 +6,16 @@
     "./button": "./src/button.tsx",
     "./card": "./src/card.tsx",
     "./code": "./src/code.tsx",
-    "./center":"./src/Center.tsx",
-    "./select":"./src/Select.tsx",
-    "./textinput":"./src/TextInput.tsx",
-    "./appbar":"./src/Appbar.tsx"
-    
+    "./center": "./src/Center.tsx",
+    "./select": "./src/Select.tsx",
+    "./textinput": "./src/TextInput.tsx",
+    "./appbar": "./src/Appbar.tsx"
   },
   "scripts": {
     "lint": "eslint . --max-warnings 0",
     "generate:component": "turbo gen react-component",
-    "check-types": "tsc --noEmit"
+    "check-types": "tsc --noEmit",
+    "build": "tailwindcss -i src/styles/globals.css -o dist/output.css"
   },
   "devDependencies": {
     "@repo/eslint-config": "*",
@@ -27,7 +27,10 @@
     "typescript": "5.5.4"
   },
   "dependencies": {
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.5.1",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "tailwindcss": "^4.0.0"
   }
 }
