@@ -1,6 +1,7 @@
 {
   "name": "@repo/store",
   "version": "1.0.0",
+  "type": "module",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -10,9 +11,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@repo/typescript-config": "^0.0.0",
     "recoil": "^0.7.7"
   },
   "exports": {
-    "./useBalance": "./src/hooks/useBalance"
-}
+    "./useBalance": "./src/hooks/useBalance",
+    "./balance": "./src/atoms/balance"
+  }
 }
