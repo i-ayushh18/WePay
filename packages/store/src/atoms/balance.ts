@@ -1,9 +1,14 @@
+// atoms/balance.ts
 import { atom } from "recoil";
 
-
-export const balanceAtom = atom<number>({
-    key: 'balanceAtom',
-    default: 0,
+// Atom for unlocked balance (amount)
+export const amountAtom = atom<number>({
+    key: "amountAtom",  // unique ID
+    default: 0,         // initial value (can be set to any number)
 });
 
-
+// Atom for locked balance (locked)
+export const lockedAtom = atom<number>({
+    key: "lockedAtom",  // unique ID
+    default: 0,         // initial value (can be set to any number)
+});
