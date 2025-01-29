@@ -2,6 +2,6 @@
 export default {
   plugins: {
     '@tailwindcss/postcss': {},  // Make sure this is installed
-    autoprefixer: {},
+    
   },
 };

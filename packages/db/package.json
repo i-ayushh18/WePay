@@ -11,8 +11,10 @@
   "type": "module",
   "description": "",
   "dependencies": {
-    "@prisma/client": "^6.2.1"
-    
+    "@prisma/client": "^6.2.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "recoil": "^0.7.7"
   },
   "exports": {
     "./client": "./index.ts"

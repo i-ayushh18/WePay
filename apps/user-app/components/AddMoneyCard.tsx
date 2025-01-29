@@ -66,6 +66,7 @@ export const AddMoney = () => {
         />
         <div
           style={{
+
             opacity: loading ? 0.5 : 1,
             pointerEvents: loading ? "none" : "auto",
           }}
