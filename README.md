@@ -83,5 +83,5 @@ This application is in active development. New features will be added progressiv
 ---
 🚀 Contributions are welcome! Feel free to fork the repository and submit pull requests.
 
-📜 **License**: This project is licensed under the MIT License.
+
 
