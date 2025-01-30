@@ -1,84 +1,87 @@
-# Turborepo starter
+# WePay - Payment App
 
-This Turborepo starter is maintained by the Turborepo core team.
+A digital wallet application inspired by Paytm, enabling users to send, receive, and manage money efficiently.
 
-## Using this example
+## 🚀 Features
+- **Instant Money Transfers**: Secure peer-to-peer (P2P) digital wallet for seamless transactions.
+- **Transaction History**: Track and manage transactions with detailed statements.
+- **User Authentication**: Secure authentication system to verify users and track login history.
 
-Run the following command:
+## 🛠️ Tech Stack
+- **Frontend**: ReactJS, NextJS for both client and server-side rendering, Tailwind CSS for responsiveness.
+- **State Management**: Recoil for efficient state management.
+- **Backend**: Node.js, Express.js, NextAuth for authentication.
+- **Database**: PostgreSQL with Prisma ORM and Aiven, combining open-choice services to rapidly stream, store, and serve data across major cloud providers.
+- **Monorepo Management**: Turborepo for handling multi-package repositories.
+- **Containerization**: Docker for efficient deployment and scaling.
 
+## 📌 Why Prisma ORM?
+Prisma is a next-generation ORM that simplifies database management and enhances developer productivity. It provides:
+
+- **Type-Safety**: Auto-generated TypeScript types for database queries.
+- **Schema Management**: Easy schema migrations and version control.
+- **Optimized Query Performance**: Efficient database queries with optimized SQL execution.
+- **Database Abstraction**: Works seamlessly with PostgreSQL, MySQL, SQLite, and more.
+- **Developer-Friendly API**: Intuitive query syntax and support for raw SQL when needed.
+
+With Prisma, integrating PostgreSQL into the wallet app ensures efficient, scalable, and maintainable database operations.
+
+## 📦 Installation
+### Prerequisites
+✔️ Ensure Node.js, PostgreSQL, and Docker are installed on your machine.
+✔️ Install VS Code for easy development and debugging.
+✔️ Install necessary VS Code extensions (e.g., ESLint, Prettier, Prisma, Docker).
+
+### Setup
+1️⃣ Clone the repository:
+```bash
+git clone https://github.com/i-ayushh18/WePay.git
+cd WePay
+```
+
+2️⃣ Set up the backend and frontend:
 ```sh
-npx create-turbo@latest
+# Bank Webhook Service
+cd apps/bank-webhook
+npm install
+npm run dev
+
+# User App
+cd ../user-app
+npm install
+npm run dev
 ```
 
-## What's inside?
-
-This Turborepo includes the following packages/apps:
-
-### Apps and Packages
-
-- `docs`: a [Next.js](https://nextjs.org/) app
-- `web`: another [Next.js](https://nextjs.org/) app
-- `@repo/ui`: a stub React component library shared by both `web` and `docs` applications
-- `@repo/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `@repo/typescript-config`: `tsconfig.json`s used throughout the monorepo
-
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
-
-### Utilities
-
-This Turborepo has some additional tools already setup for you:
-
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
-
-### Build
-
-To build all apps and packages, run the following command:
-
-```
-cd my-turborepo
-pnpm build
+3️⃣ Set up the database ORM:
+```sh
+cd ../packages/db
+npx prisma migrate dev
 ```
 
-### Develop
+4️⃣ Set up environment variables:
 
-To develop all apps and packages, run the following command:
-
-```
-cd my-turborepo
-pnpm dev
-```
-
-### Remote Caching
-
-> [!TIP]
-> Vercel Remote Cache is free for all plans. Get started today at [vercel.com](https://vercel.com/signup?/signup?utm_source=remote-cache-sdk&utm_campaign=free_remote_cache).
-
-Turborepo can use a technique known as [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
-
-By default, Turborepo will cache locally. To enable Remote Caching you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup?utm_source=turborepo-examples), then enter the following commands:
-
-```
-cd my-turborepo
-npx turbo login
+- Create a `.env` file in `../user-app` and add:
+```env
+JWT_SECRET=your-secret-key
+NEXTAUTH_URL=http://localhost:3000
 ```
 
-This will authenticate the Turborepo CLI with your [Vercel account](https://vercel.com/docs/concepts/personal-accounts/overview).
-
-Next, you can link your Turborepo to your Remote Cache by running the following command from the root of your Turborepo:
-
-```
-npx turbo link
+- Create a `.env` file in `../packages/db` and add:
+```env
+DATABASE_URL="postgres://user:password@db.example.com:3000/mydatabase?sslmode=require"
 ```
 
-## Useful Links
+5️⃣ Access the app in your browser at [http://localhost:3000](http://localhost:3000).
 
-Learn more about the power of Turborepo:
+## 🚧 Development Status
+This application is in active development. New features will be added progressively based on user feedback.
 
-- [Tasks](https://turbo.build/repo/docs/core-concepts/monorepos/running-tasks)
-- [Caching](https://turbo.build/repo/docs/core-concepts/caching)
-- [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching)
-- [Filtering](https://turbo.build/repo/docs/core-concepts/monorepos/filtering)
-- [Configuration Options](https://turbo.build/repo/docs/reference/configuration)
-- [CLI Usage](https://turbo.build/repo/docs/reference/command-line-reference)
+## 📌 Usage
+- 🔄 Add money to your wallet via bank transfer or UPI.
+- 💸 Send and receive money instantly.
+
+---
+🚀 Contributions are welcome! Feel free to fork the repository and submit pull requests.
+
+📜 **License**: This project is licensed under the MIT License.
+
